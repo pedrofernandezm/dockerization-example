@@ -1,0 +1,30 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3100/",
+  "devDependencies": {
+    "enzyme": "^2.7.1",
+    "react-addons-test-utils": "^15.4.2",
+    "react-scripts": "0.9.0"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "bootstrap": "3",
+    "jwt-decode": "^2.1.0",
+    "moment": "^2.17.1",
+    "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-alert": "^1.0.14",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2",
+    "storage.io": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

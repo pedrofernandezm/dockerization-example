@@ -1,0 +1,133 @@
+FORMAT: 1A
+
+# Tickets API Documentation
+
+# Group Sessions
+
+## Sessions [/api/sessions]
+
+### Create Session [POST]
+
+Validates username / password and creates new session and access-token if authorized.
+
++ Request (application/json)
+
+    + Body
+
+            {
+              "username": "customer@tickets.com",
+              "password": "Secret!"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Body
+
+            {
+                "data": {
+                    "id": "BKbsQajB9G4GBn6bgUrWuEsc",
+                    "type": "sessions",
+                    "attributes": {
+                        "access-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ0b2tlbiI6InVHSktQdnBWcXBuelp4OGtMUmtTc1A5OSIsImV4cGlyZXNfYXQiOiIyMDE3LTAyLTI1IDIwOjE5OjI5IFVUQyIsInR5cGUiOiJDdXN0b21lciJ9.Fp_qTRyfOVFpynbMZJF26ji7Pd4SG4NM2W0bZSebjJk",
+                        "expires-at": "2017-02-25T20:19:29.000Z"
+                    },
+                    "relationships": {
+                        "user": {
+                            "data": {
+                                "id": "NfVGuUoppuWvu75BqTzhQxEX",
+                                "type": "customers"
+                            }
+                        }
+                    }
+                },
+                "included": [
+                    {
+                        "id": "NfVGuUoppuWvu75BqTzhQxEX",
+                        "type":"customers",
+                        "attributes": {
+                            "email": "customer@tickets.com",
+                            "type":"Customer"
+                        },
+                        "relationships": {
+                            "tickets": {
+                                "data": []
+                            }
+                        }
+                    }
+                ]
+            }
+
+
+### Delete Session [DELETE]
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxWU01aW1hRWFuNTlHVmJJQzZ0QnE2IiwianRpIjoic29tZV9qdGkifQ._WwA_3cesbxS2IpXGWe81UzJymUZfPupSErjSEAEVik
+
++ Response 200
+
+# Group Tickets
+
+## Agents Tickets [/api/agents/tickets]
+
+### List tickets [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Body
+
+            {
+                "data": [
+                    {
+                        "id": "TuZA7VrhtotScxNmWPbSyv4C",
+                        "type":"tickets",
+                        "attributes": {
+                            "subject": "Dolores perspiciatis ducimus cupiditate commodi aut iste doloribus ea.",
+                            "author": "frieda.pfeffer@rath.biz",
+                            "description": "Maxime animi perspiciatis dolore debitis id. Dolor iusto consequatur praesentium sunt. Ut sit eaque cum aut molestias vitae quidem. Magnam sed ullam ut est voluptatum.",
+                            "aasm-state": "closed",
+                            "created-at": "2017-02-25T20:18:46.000Z"
+                        },
+                        "relationships": {
+                            "customer": {
+                                "data": {
+                                    "id": "QiJ2ZJj4avPvxT1EgLctW3SG",
+                                    "type": "customers"
+                                }
+                            },
+                            "replies": {
+                                "data": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "Gzorhdj5D4EC8Eyg2yQQB7Zp",
+                        "type": "tickets",
+                        "attributes": {
+                            "subject": "Dolores eos est et.",
+                            "author": "frieda.pfeffer@rath.biz",
+                            "description": "Aut dolore est dicta placeat quo. Enim ea autem et. Quas molestias incidunt architecto doloremque voluptas quidem neque. Inventore eum voluptatem rerum quia. Quod optio dicta est sunt.",
+                            "aasm-state": "closed",
+                            "created-at": "2017-02-25T20:18:46.000Z"
+                        },
+                        "relationships": {
+                            "customer": {
+                                "data": {
+                                    "id": "QiJ2ZJj4avPvxT1EgLctW3SG",
+                                    "type":"customers"
+                                }
+                            },
+                            "replies": {
+                                "data": [
+                                    {"id":"WSHMYTZbWmqdZA1zcmqdUQs2", "type":"replies"},
+                                    {"id":"7LNaXR813K2jnRNbi5NcYQ1X", "type":"replies"}
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }

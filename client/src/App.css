@@ -1,0 +1,42 @@
+.App{
+  margin-bottom: 30px;
+}
+
+.App, .login-page {
+  height: 100%;
+}
+
+.page-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box{
+  width: 300px;
+  padding-top: 100px;
+}
+
+.form-box.wide{
+  width: 600px;
+}
+
+.tickets-table .label{
+  display: block;
+}
+
+.link-button {
+  margin: 10px 5px;
+}
+
+.link-button a{
+  color: #FFF;
+  text-decoration: none;
+}
+
+.navbar .session span{
+  margin-right: 10px;
+}
+.navbar .session a{
+  margin-left: 10px;
+}
